@@ -9,4 +9,9 @@ The project setup is not yet completed. I still need to add the hashcat software
 User1: Victim to data breach and password hash has been compromised.
 Attacker: Has most commonly used passwords list and hash of user1. Will attempt to use that information to gain root access in the container.
 
+
 Security Solution is to add monitoring and possible limit the attempts of login attempts.
+
+Current Commands to run
+$ docker compose build
+$ docker compose up -d
