@@ -1,0 +1,22 @@
+services:
+  user1:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: UbuntuUser1
+    networks:
+      [labnet]
+    tty: true
+  attacker:
+    build: 
+        context: .
+        dockerfile: dockerfile.att
+    container_name: UbuntuAttacker
+    networks:
+      [labnet]
+    tty: true
+
+networks:
+  labnet:
+    name: cecs478_final_project
+    

@@ -1,0 +1,19 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+#add sudo and no-install recommedation
+RUN apt update && apt install -y sudo && apt install -y --no-install-recommends
+
+#install hashcat and wordlist file to this document
+#modification needed
+
+#Make the user to be attacker + will be running the simulations of password cracking
+RUN useradd -m attacker && \
+    echo "attacker:password34" | chpasswd
+
+RUN usermod -aG sudo attacker
+#Set user to made one
+USER attacker
+
+#directory of user
+WORKDIR /app
