@@ -1,0 +1,63 @@
+hashcat -m 100 -a 0 sha1.hash rockyou.txt
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 6.0+debian  Linux, None+Asserts, RELOC, SPIR-V, LLVM 18.1.8, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+====================================================================================================================================================
+* Device #1: cpu-haswell-12th Gen Intel(R) Core(TM) i7-1255U, 2804/5673 MB (1024 MB allocatable), 12MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Early-Skip
+* Not-Salted
+* Not-Iterated
+* Single-Hash
+* Single-Salt
+* Raw-Hash
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Temperature abort trigger set to 90c
+
+Host memory required for this attack: 3 MB
+
+Dictionary cache built:
+* Filename..: rockyou.txt
+* Passwords.: 14344391
+* Bytes.....: 139922185
+* Keyspace..: 14344384
+* Runtime...: 1 sec
+
+6e2f9e6111e77edd0c446ea7a84e25323d137a61:hunter
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 100 (SHA1)
+Hash.Target......: 6e2f9e6111e77edd0c446ea7a84e25323d137a61
+Time.Started.....: Sun Dec  7 21:56:25 2025 (0 secs)
+Time.Estimated...: Sun Dec  7 21:56:25 2025 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:    69475 H/s (0.16ms) @ Accel:512 Loops:1 Thr:1 Vec:8
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 6144/14344384 (0.04%)
+Rejected.........: 0/6144 (0.00%)
+Restore.Point....: 0/14344384 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
+Candidate.Engine.: Device Generator
+Candidates.#1....: 123456 -> horoscope
+Hardware.Mon.#1..: Util:  8%
+
+Started: Sun Dec  7 21:56:04 2025
+Stopped: Sun Dec  7 21:56:25 2025
+attacker@8f00ab6503fb:/app$

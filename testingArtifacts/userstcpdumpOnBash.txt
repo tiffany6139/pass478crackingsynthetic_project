@@ -1,0 +1,28 @@
+docker exec -it UbuntuUser1 bash
+user1@d10fa37be01e:/app$ sudo tcpdump
+[sudo] password for user1: 
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+03:53:21.233871 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [S], seq 1058059415, win 64240, options [mss 1460,sackOK,TS val 1504805427 ecr 0,nop,wscale 7], length 0
+03:53:21.255324 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [S.], seq 2202502099, ack 1058059416, win 29184, options [mss 1460,sackOK,TS val 1188756528 ecr 1504805427,nop,wscale 7], length 0
+03:53:21.255483 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [.], ack 1, win 502, options [nop,nop,TS val 1504805448 ecr 1188756528], length 0
+03:53:21.255925 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [P.], seq 1:203, ack 1, win 502, options [nop,nop,TS val 1504805449 ecr 1188756528], length 202: HTTP: GET /debian/dists/trixie/InRelease HTTP/1.1
+03:53:21.257809 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [.], ack 203, win 226, options [nop,nop,TS val 1188756531 ecr 1504805449], length 0
+03:53:21.281978 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [P.], seq 1:290, ack 203, win 4096, options [nop,nop,TS val 1188756551 ecr 1504805449], length 289: HTTP: HTTP/1.1 304 Not Modified
+03:53:21.282067 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [.], ack 290, win 501, options [nop,nop,TS val 1504805475 ecr 1188756551], length 0
+03:53:21.282522 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [P.], seq 203:413, ack 290, win 501, options [nop,nop,TS val 1504805475 ecr 1188756551], length 210: HTTP: GET /debian/dists/trixie-updates/InRelease HTTP/1.1
+03:53:21.284087 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [.], ack 413, win 4094, options [nop,nop,TS val 1188756558 ecr 1504805475], length 0
+03:53:21.309868 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [P.], seq 290:579, ack 413, win 4096, options [nop,nop,TS val 1188756585 ecr 1504805475], length 289: HTTP: HTTP/1.1 304 Not Modified
+03:53:21.310116 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [P.], seq 413:633, ack 579, win 501, options [nop,nop,TS val 1504805503 ecr 1188756585], length 220: HTTP: GET /debian-security/dists/trixie-security/InRelease HTTP/1.1
+03:53:21.310787 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [.], ack 633, win 4094, options [nop,nop,TS val 1188756586 ecr 1504805503], length 0
+03:53:21.331864 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [P.], seq 579:909, ack 633, win 4096, options [nop,nop,TS val 1188756607 ecr 1504805503], length 330: HTTP: HTTP/1.1 304 Not Modified
+03:53:21.339116 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [F.], seq 633, ack 909, win 501, options [nop,nop,TS val 1504805532 ecr 1188756607], length 0
+03:53:21.339907 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [.], ack 634, win 4095, options [nop,nop,TS val 1188756616 ecr 1504805503], length 0
+03:53:21.372659 IP 151.101.74.132.http > d10fa37be01e.38582: Flags [F.], seq 909, ack 634, win 4096, options [nop,nop,TS val 1188756648 ecr 1504805532], length 0
+03:53:21.372680 IP d10fa37be01e.38582 > 151.101.74.132.http: Flags [.], ack 910, win 501, options [nop,nop,TS val 1504805565 ecr 1188756648], length 0
+03:53:27.172165 ARP, Request who-has d10fa37be01e tell 172.20.0.1, length 28
+03:53:27.172178 ARP, Reply d10fa37be01e is-at 82:18:b3:90:35:ef (oui Unknown), length 28
+^C
+19 packets captured
+19 packets received by filter
+0 packets dropped by kernel
