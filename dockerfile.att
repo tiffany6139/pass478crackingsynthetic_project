@@ -1,8 +1,13 @@
 FROM ubuntu:22.04
+FROM python:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 #add sudo and no-install recommedation
-RUN apt update && apt install -y sudo && apt install -y --no-install-recommends
+RUN apt update && apt install -y sudo && apt install -y --no-install-recommends \
+&& apt install -y iputils-ping \
+&& apt install -y net-tools && apt install -y iproute2\
+    libpcap0.8 libpcap0.8-dev tcpdump  
+
 
 #install hashcat and wordlist file to this document
 #modification needed
@@ -17,3 +22,28 @@ USER attacker
 
 #directory of user
 WORKDIR /app
+
+
+COPY wordlists.txt /app
+
+#run the passwordhasing for 1000 passwords 
+COPY passwordhashing.py /app
+
+COPY md5hash.hash /app
+COPY sha1.hash /app
+COPY sha256salt.hash /app
+
+COPY totalmd5hash.hash /app
+COPY totalsha1hash.hash /app
+COPY totalsha256.hash /app
+
+
+COPY rockyou.txt /app
+
+COPY runcommands.py /app
+
+#was testing on new images
+# CMD ["python", "/app/runcommands.py" ]
+
+#keeps the container running
+#ENTRYPOINT ["tail", "-f", "/dev/null" ]

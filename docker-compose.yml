@@ -5,7 +5,9 @@ services:
       dockerfile: Dockerfile
     container_name: UbuntuUser1
     networks:
-      [labnet]
+        custom_net:
+          ipv4_address: 172.20.0.5
+    stdin_open: true
     tty: true
   attacker:
     build: 
@@ -13,10 +15,16 @@ services:
         dockerfile: dockerfile.att
     container_name: UbuntuAttacker
     networks:
-      [labnet]
+      custom_net:
+        ipv4_address: 172.20.0.6
+    stdin_open: true
     tty: true
 
 networks:
-  labnet:
-    name: cecs478_final_project
+  custom_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+  
     
