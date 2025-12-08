@@ -21,7 +21,7 @@ Modify the password in the user container to have the correct password that is g
 
 #Final Commands to complete the Project
 
-    Before the running any docker commands- I ran my python file to generate everything that needs to be written into the .hash files!
+    Before the running any docker commands- I ran my python file (passwordhashing.py) to generate everything that needs to be written into the .hash files!
     
 #First build the docker containers, networks, etc.
 
@@ -85,6 +85,7 @@ sudo tcpdump -w newpath.pcap
 
 #other terminal
 python attackerscript.py
+
 
 
 
