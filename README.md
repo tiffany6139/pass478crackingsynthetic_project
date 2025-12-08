@@ -20,7 +20,7 @@ In the python file I will get a random password hash to be used to allow for the
 Modify the password in the user container to have the correct password that is generated in the ptyhon script
 
 #Final Commands to complete the Project
-#Before the running any docker commands- I ran my python file to generate everything that needs to be written into the .hash files!
+    Before the running any docker commands- I ran my python file to generate everything that needs to be written into the .hash files!
 #First build the docker containers, networks, etc.
 
     docker compose build 
@@ -83,5 +83,6 @@ sudo tcpdump -w newpath.pcap
 
 #other terminal
 python attackerscript.py
+
 
 
