@@ -24,7 +24,8 @@ Modify the password in the user container to have the correct password that is g
 #Final Commands to complete the Project
 
     Need to download dictionary from https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt?resource=download since uploading it to github is too large
-    Before the running any docker commands- I ran my python file (passwordhashing.py) to generate everything that needs to be written into the .hash files!
+    Before the running any docker commands- I ran my python file (passwordhashing.py) to generate everything that needs to be written into the .hash files! 
+    Also, default is that the attacker can only run MD5 command if attacker wants all 6 they need to uncomment that line in passwordhashing.py and comment out the one liner.
     
 #First build the docker containers, networks, etc.
 
@@ -88,6 +89,7 @@ sudo tcpdump -w newpath.pcap
 
 #other terminal
 python attackerscript.py
+
 
 
 
